@@ -20,6 +20,9 @@ Flask-RESTful
         - 데코레이터로 endpoint를 설정하지 않고 add_resource 메소드를 사용하여 Student에 접근한다.
             - Resource class에 get, post.. 등의 method를 추가로 작성하더라도 해당 url에 대해서만 한번 코드를 작성하면 된다. 
     
-    - Test-first API design
-        - postman에서 /items (get)과 /item/<name> (get,post,delete,put)을 만들었는데 items와 item이 각각 리소스다. 즉 2개의 리소스가 있다.
-        - 여기서 REST가 무엇인지 어렴풋이 알 수 있는데, 'post'를 사용함으로써 /item/create 라는 url을 만들 필요가 없어졌다.
+- Test-first API design
+    - postman에서 /items (get)과 /item/<name> (get,post,delete,put)을 만들었는데 items와 item이 각각 리소스다. 즉 2개의 리소스가 있다.
+    - 여기서 REST가 무엇인지 어렴풋이 알 수 있는데, 'post'를 사용함으로써 /item/create 라는 url을 만들 필요가 없어졌다.
+
+- 
+    - next() : filter()로 특정 아이템을 get하면 하나의 값만이 매칭될 것을 알고 있다. next()로 감싸주면 매칭되는 첫번째 객체를 가져온다. 매칭되는 값이 없으면 에러가 발생하므로 두번째 인자로 None을 준다. (default value가 됌)
