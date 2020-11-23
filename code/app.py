@@ -1,21 +1,28 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
+from flask_jwt import JWT, jwt_required
+
+from security import authenticate, identity
 
 app = Flask(__name__)
+app.secret_key = "soongjamm"
 api = Api(app)
+
+jwt = JWT(app, authenticate, identity)  # /auth
 
 items = []
 
 
 class Item(Resource):
+    @jwt_required()
     def get(self, name):
         item = next(filter(lambda x: x["name"] == name, items), None)
-        return {"item": None}, 200 if items else 404
+        return {"item": item}, 200 if items else 404
 
     def post(self, name):
         if next(filter(lambda x: x["name"] == name, items), None):
             return {
-                "message": "An item with name '{}' already exsists".format(name)
+                "message": "An item with name '{}' already exists".format(name)
             }, 400
 
         data = request.get_json()
