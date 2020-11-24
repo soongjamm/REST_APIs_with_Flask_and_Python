@@ -52,7 +52,10 @@ Flast-JWT
 - __sqlite3__
     - 따로 인스톨하지 않아도 임포트할 수 있다.
     - cursor 
-
+    - data.db가 있는 곳에서 app.py를 실행 해줘야 함.
 
 - __etc__
-     next() : filter()로 특정 아이템을 get하면 하나의 값만이 매칭될 것을 알고 있다. next()로 감싸주면 매칭되는 첫번째 객체를 가져온다. 매칭되는 값이 없으면 에러가 발생하므로 두번째 인자로 None을 준다. (default value가 됌)
+    - next() : filter()로 특정 아이템을 get하면 하나의 값만이 매칭될 것을 알고 있다. next()로 감싸주면 매칭되는 첫번째 객체를 가져온다. 매칭되는 값이 없으면 에러가 발생하므로 두번째 인자로 None을 준다. (default value가 됌)
+    - User class의 _find_by_username_
+        - @classmethod를 사용해준다. => 현재 클래스를 사용할 것이다.(User) => User라고 직접 하드코딩하는 것 보다 nicer 하다.
+        - cls(row[0] ....) => cls(*row)
