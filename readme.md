@@ -4,6 +4,7 @@
 ### 사용된 도구
 Python 3.9
 Flask-RESTful
+Flast-JWT
 
 ### 실행하기
 - source venv/bin/activate
@@ -19,6 +20,10 @@ Flask-RESTful
         - 아주 쉽게 Resource를 add 할 수 있게 도와준다.
         - 데코레이터로 endpoint를 설정하지 않고 add_resource 메소드를 사용하여 Student에 접근한다.
             - Resource class에 get, post.. 등의 method를 추가로 작성하더라도 해당 url에 대해서만 한번 코드를 작성하면 된다. 
+    - reqparse
+        - request를 파싱해준다. 
+        - add_argument()를 통해 허용할 key를 지정해주고, 그 외 key들은 버려진다.
+            - 예를 들어, price가 아닌 { pric: 50.00 } 이 들어오면 버려진다.
     
 - __Test-first API design__
     - postman에서 /items (get)과 /item/<name> (get,post,delete,put)을 만들었는데 items와 item이 각각 리소스다. 즉 2개의 리소스가 있다.
