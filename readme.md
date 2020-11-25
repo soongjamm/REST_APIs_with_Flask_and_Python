@@ -61,3 +61,9 @@ Flast-JWT
     - User class의 _find_by_username_
         - @classmethod를 사용해준다. => 현재 클래스를 사용할 것이다.(User) => User라고 직접 하드코딩하는 것 보다 nicer 하다.
         - cls(row[0] ....) => cls(*row)
+    -  if __name__ == '__main__': 
+        - app.py에서 app.run을 전역으로 두면, 다른 파일에서 app을 import할 때 마다 실행된다. 이것을 방지하고 python app.py를 했을 때만 실행되게 하기 위함
+
+    - **@classmethod** or **@staticmethod**
+        - Item 클래스의 find_by_name에서 _@classmethod를_ 사용하고 있다.
+        - class를 활용해야하면 @classmethod를 쓰는 것이 좋다. 
