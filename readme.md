@@ -9,7 +9,7 @@ Flast-JWT
 
 ### 실행하기
 - source venv/bin/activate
-- python app.py (code 디렉토리에서 실행)
+- python app.py (실행하는 시점에 db파일과 같은 디렉토리에 위치해야 함)
 
 
 ### 메모
@@ -49,10 +49,12 @@ Flast-JWT
         - 데코레이터가 호출되면 JW token을 같이 보낸다. 이 때 JWT가 하는 일은 identity를 호출하고 user ID를 얻기 위하여 JW token을 전달, JW token이 나타내는 유저를 리턴받는다.
 
 
-- __sqlite3__
-    - 따로 인스톨하지 않아도 임포트할 수 있다.
-    - cursor 
-    - data.db가 있는 곳에서 app.py를 실행 해줘야 함.
+- __DB__
+    - sqlite3
+        - 따로 인스톨하지 않아도 임포트할 수 있다.
+        - cursor 
+        - data.db가 있는 곳에서 app.py를 실행 해줘야 함.
+        - Auto Increment 기능을 사용하려면 데이터타입이 'int'가 아닌 'INTEGER' 여야 한다.
 
 - __etc__
     - next() : filter()로 특정 아이템을 get하면 하나의 값만이 매칭될 것을 알고 있다. next()로 감싸주면 매칭되는 첫번째 객체를 가져온다. 매칭되는 값이 없으면 에러가 발생하므로 두번째 인자로 None을 준다. (default value가 됌)
