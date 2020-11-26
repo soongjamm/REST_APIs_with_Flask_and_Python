@@ -5,6 +5,7 @@
 Python 3.9
 Flask-RESTful
 Flast-JWT
+Flask-SQLalchemy
 
 
 ### 실행하기
@@ -55,6 +56,8 @@ Flast-JWT
         - cursor 
         - data.db가 있는 곳에서 app.py를 실행 해줘야 함.
         - Auto Increment 기능을 사용하려면 데이터타입이 'int'가 아닌 'INTEGER' 여야 한다.
+    - flask-SQLAlchemy
+        - sqlalchemy에 의존한다.
 
 - __etc__
     - next() : filter()로 특정 아이템을 get하면 하나의 값만이 매칭될 것을 알고 있다. next()로 감싸주면 매칭되는 첫번째 객체를 가져온다. 매칭되는 값이 없으면 에러가 발생하므로 두번째 인자로 None을 준다. (default value가 됌)
